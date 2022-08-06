@@ -1,0 +1,21 @@
+server:
+  port: 8080
+  shutdown: graceful
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          oauth2-demo:
+            client-id: oauth2-demo
+            client-secret: RAfXDcBFKNoWgiz7j6CprUe5cf8KnlOR
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8080/login/oauth2/code/demo
+            scope:
+              - openid
+              - profile
+              - roles
+        provider:
+          oauth2-demo:
+            issuer-uri: http://localhost:28080/realms/master
